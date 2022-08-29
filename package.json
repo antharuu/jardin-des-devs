@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=18",
+    "node": ">=16",
     "pnpm": ">=7"
   },
   "scripts": {
@@ -12,12 +12,14 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prod": "vercel --prod"
   },
   "devDependencies": {
     "@astrojs/mdx": "^0.10.2",
     "@astrojs/rss": "^1.0.0",
     "@astrojs/sitemap": "^1.0.0",
+    "@astrojs/vercel": "^1.0.1",
     "astro": "^1.1.1",
     "sass": "^1.54.5"
   }
