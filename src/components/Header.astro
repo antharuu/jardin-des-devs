@@ -1,25 +1,24 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../config';
+import Link from "./Link.astro";
+import { SITE_TITLE } from "../config";
+import { Categories } from "../jdd/infos";
+
+console.log("ok");
 ---
 
-<header>
-	<h2>
-		{SITE_TITLE}
-	</h2>
-	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
-		<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
+<header class="header">
+	<div class="header__title-container">
+		<Link href="/" class="header__title-link">
+			<h1 class="header__title">{SITE_TITLE}</h1>
+		</Link>
+	</div>
+	<nav class="categories-nav">
+		{
+			Categories.map((v) => (
+				<a class="categories-nav__item" href={"category/" + v}>
+					{v.replaceAll("-", " ")}
+				</a>
+			))
+		}
 	</nav>
 </header>
-<style>
-	header {
-		margin: 0em 0 2em;
-	}
-	h2 {
-		margin: 0.5em 0;
-	}
-</style>
