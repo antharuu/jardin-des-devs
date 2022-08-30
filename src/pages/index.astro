@@ -3,8 +3,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 const posts = (await Astro.glob("./posts/**/*.{md,mdx}")).sort(
 	(a, b) =>
-		new Date(b.frontmatter.pubDate).valueOf() -
-		new Date(a.frontmatter.pubDate).valueOf()
+		new Date(b.frontmatter.date).valueOf() -
+		new Date(a.frontmatter.date).valueOf()
 );
 
 const current_year = new Date().getFullYear();
@@ -31,15 +31,15 @@ function cleanCategory(string: string): string {
 						<a href={post.url}>
 							<time
 								class="article__category"
-								datetime={post.frontmatter.pubDate}
+								datetime={post.frontmatter.date}
 							>
 								{new Date(
-									post.frontmatter.pubDate
+									post.frontmatter.date
 								).toLocaleDateString("fr-fr", {
 									year:
 										current_year ==
 										new Date(
-											post.frontmatter.pubDate
+											post.frontmatter.date
 										).getFullYear()
 											? undefined
 											: "numeric",

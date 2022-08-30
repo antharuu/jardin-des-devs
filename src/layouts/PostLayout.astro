@@ -1,13 +1,33 @@
 ---
 import MainLayout from "./MainLayout.astro";
 
+import { cleanCategory } from "../jdd/tools";
 const { frontmatter: infos } = Astro.props;
 ---
 
 <MainLayout subtitle={infos.title}>
     <section class="post-infos">
         <img src={infos.image} class="post-infos__image" />
-        <h1 class="post-infos__title">{infos.title}</h1>
+        <div class="post-infos__content">
+            <div class="post-infos__content-inner">
+                <h1 class="post-infos__title">{infos.title}</h1>
+                <div class="post-infos__infos">
+                    <time class="date" datetime={infos.date}>
+                        {
+                            new Date(infos.date).toLocaleDateString("fr-fr", {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric",
+                            })
+                        }
+                    </time>
+                    <p class="category">{cleanCategory(infos.category)}</p>
+                    <p class="author">{infos.author}</p>
+                </div>
+            </div>
+        </div>
     </section>
-    <slot />
+    <div class="post__content">
+        <slot />
+    </div>
 </MainLayout>
