@@ -1,11 +1,13 @@
 {
-  "name": "@example/blog",
-  "version": "0.0.1",
+  "name": "@antharuu/jardin-des-devs",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "engines": {
     "node": ">=16",
-    "pnpm": ">=7"
+    "pnpm": ">=7.9",
+    "yarn": ">=1.22",
+    "npm": ">=8.17"
   },
   "scripts": {
     "dev": "astro dev",
@@ -20,6 +22,7 @@
     "@astrojs/rss": "^1.0.0",
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/vercel": "^1.0.1",
+    "@astrojs/prism": "^1.0.1",
     "astro": "^1.1.1",
     "sass": "^1.54.5"
   }
