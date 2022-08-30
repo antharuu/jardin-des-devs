@@ -3,12 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "engines": {
-    "node": ">=16",
-    "pnpm": ">=7.9",
-    "yarn": ">=1.22",
-    "npm": ">=8.17"
-  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

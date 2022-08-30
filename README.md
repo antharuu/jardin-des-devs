@@ -107,3 +107,5 @@ author: "Antharuu"
 <!-- Ici votre article en md/mdx -->
 
 ```
+
+*Notez que le slug ne doit pas contenir d'espace ou de characteres spéciaux.*
