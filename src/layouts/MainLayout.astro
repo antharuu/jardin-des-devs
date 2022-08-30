@@ -1,0 +1,27 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+
+const { subtitle } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="fr-fr">
+    <head>
+        <BaseHead
+            title={(subtitle ? `${subtitle} - ` : "") + SITE_TITLE}
+            description={SITE_DESCRIPTION}
+        />
+    </head>
+    <body>
+        <div id="app">
+            <Header title={SITE_TITLE} />
+            <main>
+                <slot />
+                <Footer />
+            </main>
+        </div>
+    </body>
+</html>

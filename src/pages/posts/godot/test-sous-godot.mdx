@@ -1,13 +1,27 @@
 ---
-layout: "../../../layouts/BlogPost.astro"
-title: "Mon test de godot 5 dans le futur"
+# ⚠️ Ne pas toucher à cette ligne
+layout: "../../../layouts/PostLayout.astro"
+
+# Titre de l'article
+title: "Bonjour le monde"
+
+# Description courte, utilisé dans la liste des articles ainsi que pour le référencement.
 description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore iure rerum enim voluptatum nemo. Ab adipisci harum nesciunt vero et similique minima alias modi unde quod! Doloremque officiis odit sapiente."
-pubDate: "2042-12-01" # Format: YYYY-MM-DD
-heroImage: "https://www.gamingonlinux.com/uploads/articles/article_media/10816330151580730555gol1.jpg"
+
+# La date de publication/modification. (format: YYYY-MM-DD)
+pubDate: "2042-12-01"
+
+# L'image de bannière (soit le lien direct, soit insérer dans le dossier images dans /public "/images/[votre image]")
+image: "http://placekitten.com/1000/1002"
+
+# La catégorie de l'article.
 category: "godot"
-tags: [ # 5 Tags max
-    'test', 
-    'osef', 
-    'jdd'
-    ]
+
+# Les tags de votre article. (5 max)
+tags: [ "tag1", "tag2", "tag3", "tag4", "tag5" ]
+
+# L'auteur de l'article.
+author: "Antharuu"
 ---
+
+<h1>{"yo".toUpperCase()}</h1>

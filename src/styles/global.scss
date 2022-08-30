@@ -33,6 +33,10 @@ body {
     margin: 0 auto;
     user-select: none;
 
+    code {
+        user-select: text;
+    }
+
     &::before {
         content: '';
         left: 0;
