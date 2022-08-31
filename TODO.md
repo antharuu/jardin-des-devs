@@ -3,8 +3,7 @@
 - [x] Afficage de la liste des articles
 - [x] Afficage de la page d'article
 - [x] Filtre des articles par catégory
-- [ ] Possibilité de mettre un article en "draft"
-- [ ] Lazy loading des images
+- [x] Possibilité de mettre un article en "draft"
 - [ ] Filtre des articles par tag
 - [ ] Filtre des articles par auteur
 - [ ] Recherche d'un article
