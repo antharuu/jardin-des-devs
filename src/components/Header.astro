@@ -1,7 +1,7 @@
 ---
 import Link from "./Link.astro";
 import { SITE_TITLE } from "../config";
-import { Categories } from "../jdd/infos";
+import { categories } from "../jdd/categories";
 ---
 
 <header class="header">
@@ -17,9 +17,9 @@ import { Categories } from "../jdd/infos";
 	</div>
 	<nav class="categories-nav">
 		{
-			Categories.map((v) => (
-				<a class="categories-nav__item" href={"category/" + v}>
-					{v.replaceAll("-", " ")}
+			Object.entries(categories).map((cat) => (
+				<a class="categories-nav__item" href={"/category/" + cat[0]}>
+					{cat[1]}
 				</a>
 			))
 		}

@@ -1,74 +1,14 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import ArticlesList from "../components/ArticlesList.astro";
 
 const posts = (await Astro.glob("./posts/**/*.{md,mdx}")).sort(
 	(a, b) =>
 		new Date(b.frontmatter.date).valueOf() -
 		new Date(a.frontmatter.date).valueOf()
 );
-
-const current_year = new Date().getFullYear();
-
-function cleanCategory(string: string): string {
-	string = string.charAt(0).toUpperCase() + string.slice(1); // Uc first
-	string = string.replaceAll("-", " "); // Replace - par un espace
-	return string;
-}
 ---
 
 <MainLayout>
-	<section class="articles">
-		{
-			posts.map((post) => (
-				<div class={`article category--${post.frontmatter.category}`}>
-					<a href={post.url} class="article__image">
-						<img
-							src={post.frontmatter.image}
-							alt={`Image du post "${post.frontmatter.title}"`}
-						/>
-					</a>
-					<div class="article__top">
-						<a href={post.url}>
-							<time
-								class="article__category"
-								datetime={post.frontmatter.date}
-							>
-								{new Date(
-									post.frontmatter.date
-								).toLocaleDateString("fr-fr", {
-									year:
-										current_year ==
-										new Date(
-											post.frontmatter.date
-										).getFullYear()
-											? undefined
-											: "numeric",
-									month: "long",
-									day: "numeric",
-								})}
-							</time>
-						</a>
-						<a
-							href={`category/${post.frontmatter.category}`}
-							class="article__category"
-						>
-							{cleanCategory(post.frontmatter.category)}
-						</a>
-					</div>
-					<a href={post.url}>
-						<h3 class="article__title">{post.frontmatter.title}</h3>
-					</a>
-					<p class="article__description">
-						{post.frontmatter.description}
-					</p>
-					<div class="article__bottom">
-						<a href={post.url}>
-							Lire la suite
-							<span class="material-icons">chevron_right</span>
-						</a>
-					</div>
-				</div>
-			))
-		}
-	</section>
+	<ArticlesList {posts} />
 </MainLayout>

@@ -1,0 +1,20 @@
+{
+    "frontmatter": {
+        "layout": "../../../layouts/PostLayout.astro",
+        "title": "Bonjour le monde",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore iure rerum enim voluptatum nemo. Ab adipisci harum nesciunt vero et similique minima alias modi unde quod! Doloremque officiis odit sapiente.",
+        "date": "2042-12-01",
+        "image": "http://placekitten.com/1000/1002",
+        "category": "godot",
+        "tags": [
+            "tag1",
+            "tag2",
+            "tag3",
+            "tag4",
+            "tag5"
+        ],
+        "author": "Antharuu"
+    },
+    "url": "/posts/godot/article-1",
+    "file": "C:/laragon/www/jardin-des-devs/src/pages/posts/godot/article-1.mdx"
+}
