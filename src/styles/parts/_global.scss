@@ -1,0 +1,57 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+*::selection {
+    background-color: $primary;
+    color: white;
+}
+
+#app {
+    --color-primary: #2D9F92;
+    --color-dark: #212121;
+
+    font-family: Soleil,
+        sans-serif;
+    max-width: 1140px;
+    width: calc(100% - 2em);
+    margin: 0 auto;
+    user-select: none;
+
+    code {
+        user-select: text;
+    }
+
+    &::before {
+        content: '';
+        left: 0;
+        right: 0;
+        height: 150vh;
+        top: 0;
+        position: absolute;
+        z-index: -1;
+        background: linear-gradient(lighten($brut-primary, 20%) 0% 75%, lighten($brut-primary, 100%));
+    }
+
+    a {
+
+        &:link,
+        &:visited,
+        &:active {
+            color: $primary;
+            transition: color 150ms ease-out;
+
+            &,
+            &:hover {
+                text-decoration: none;
+            }
+
+            &:hover {
+                color: $dark;
+            }
+        }
+    }
+}

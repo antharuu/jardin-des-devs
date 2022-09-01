@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'Magical Story';
+    src: url('fonts/MagicalStory-Regular.eot');
+    src: url('fonts/MagicalStory-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/MagicalStory-Regular.woff2') format('woff2'),
+        url('fonts/MagicalStory-Regular.woff') format('woff'),
+        url('fonts/MagicalStory-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('fonts/FiraCode-Regular.woff2') format('woff2'),
+        url("fonts/FiraCode-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+$brut-primary: #2D9F92;
+$brut-dark: #212121;
+
+$primary: var(--color-primary, $brut-primary);
+$dark: var(--color-dark, $brut-primary);
+
+@import "parts/global";
+@import "parts/header";
+@import "parts/article_list";
+@import "parts/article";

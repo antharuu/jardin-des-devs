@@ -1,0 +1,157 @@
+#app {
+
+    .post-infos {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        line-height: 0;
+
+        &__image {
+            width: 100%;
+            object-fit: cover;
+            aspect-ratio: 2/1;
+        }
+
+        &__content {
+            position: absolute;
+            display: flex;
+            inset: 0;
+            line-height: unset;
+            background-color: rgba($brut-dark, .5);
+            color: white;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        &__title {
+            font-size: 3em;
+            text-transform: uppercase;
+            letter-spacing: .15em;
+            line-height: 1.5em;
+
+
+            @media screen and (max-width: 660px) {
+                font-size: 1em;
+            }
+        }
+
+        &__infos {
+            height: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3em;
+
+            a:hover {
+                color: lighten($brut-primary, 30%);
+            }
+
+            >:not(:first-child) {
+                position: relative;
+
+                &::before {
+                    content: '|';
+                    pointer-events: none;
+                    position: absolute;
+                    left: -1.5em;
+                    height: 100%;
+                    width: 1px;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .post__content {
+        padding: 2em 0;
+        margin: 0 auto;
+        width: clamp(200px, 66.66%, 800px);
+        font-weight: 300;
+        letter-spacing: .12em;
+        line-height: 1.5em;
+        word-spacing: .16em;
+        color: rgba($brut-dark, .8);
+
+        p {
+            margin-top: 3em;
+        }
+
+        a {
+            pointer-events: all;
+            color: $primary;
+            font-weight: bold;
+        }
+
+        b {
+            font-weight: bolder;
+        }
+
+        em {
+            font-style: italic;
+            color: rgba($brut-dark, .6);
+        }
+
+        blockquote {
+            border-left: 1px solid $primary;
+            margin: 0;
+            padding-left: 3em;
+            font-family: park-lane, serif;
+            font-weight: 300;
+            font-style: normal;
+            user-select: text;
+            font-size: 1.3em;
+            letter-spacing: .18em;
+            word-spacing: .2em;
+            text-align: justify;
+
+            >:first-child {
+                &::before {
+                    content: "“";
+                }
+
+                &::after {
+                    content: "”";
+                }
+            }
+
+            >:last-child:not(:first-child) cite {
+                font-style: none;
+                font-size: 0.8em;
+            }
+        }
+
+        code,
+        pre {
+            user-select: text;
+            font-family: "Fira code", monospace;
+        }
+
+        pre {
+            margin-top: 3em;
+            padding: 1em;
+            background-color: $dark !important;
+            position: relative;
+            overflow-x: unset !important;
+
+            &::before {
+                content: '';
+                background-color: $dark !important;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: -50vw;
+                right: -50vw;
+                z-index: -1;
+                pointer-events: none;
+            }
+        }
+
+        hr {
+            margin-top: 3em;
+            width: 60%;
+            opacity: 0.6;
+        }
+    }
+}

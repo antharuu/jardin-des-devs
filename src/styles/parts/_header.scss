@@ -1,0 +1,97 @@
+#app {
+
+
+    .header {
+        margin: 1em 0 3em;
+
+        &__title-link {
+            margin: 3.5em 0 2em;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: fit-content;
+            gap: 2em;
+        }
+
+        &__logo {
+            max-width: clamp(60px, 100%, 80px);
+            z-index: 2;
+            position: relative;
+            top: -3.8em;
+        }
+
+        &__title {
+            width: fit-content;
+            padding: 0 1em;
+            z-index: 1;
+            font-family: "Magical Story", cursive;
+            font-size: 3.5em;
+            letter-spacing: .04em;
+            color: white;
+            line-height: 0;
+            position: relative;
+            margin-top: -1em;
+            z-index: -1;
+
+            @media screen and (max-width: 660px) {
+                width: 100%;
+                line-height: 1.5em;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                left: 0;
+                right: 0;
+                top: -2em;
+                bottom: -2em;
+                background-color: lighten($brut-primary, 20%);
+            }
+
+            &-container {
+                text-align: center;
+                position: relative;
+                display: flex;
+                justify-content: center;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    height: 1px;
+                    background-color: rgba(white, .3);
+                    left: 0;
+                    right: 0;
+                    top: calc(50% + 4px);
+                    z-index: -1;
+                    margin-top: 1em;
+
+                    @media screen and (max-width: 660px) {
+                        content: unset;
+                    }
+                }
+            }
+
+        }
+
+        .categories-nav {
+            display: flex;
+            justify-content: center;
+            gap: 3em;
+            row-gap: 1em;
+            flex-wrap: wrap;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.9em;
+
+            a {
+                color: white;
+
+                &:hover {
+                    color: lighten($brut-primary, 50%);
+                }
+            }
+        }
+    }
+}
