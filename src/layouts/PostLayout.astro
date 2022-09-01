@@ -1,7 +1,8 @@
 ---
 import MainLayout from "./MainLayout.astro";
 
-import { cleanCategory } from "../jdd/tools";
+import { getCleanCategory } from "../jdd/Categories";
+
 const { frontmatter: infos } = Astro.props;
 ---
 
@@ -21,7 +22,9 @@ const { frontmatter: infos } = Astro.props;
                             })
                         }
                     </time>
-                    <p class="category">{cleanCategory(infos.category)}</p>
+                    <a href={"/category/" + infos.category} class="category">
+                        {getCleanCategory(infos.category)}
+                    </a>
                     <p class="author">{infos.author}</p>
                 </div>
             </div>

@@ -1,11 +1,10 @@
 ---
 import { SITE_TITLE } from "../config";
-
-const today = new Date();
+import { current_year } from "../jdd/Dates";
 ---
 
 <footer>
-	&copy; {today.getFullYear()}
+	&copy; {current_year}
 	{SITE_TITLE}. Tous droits réservés.
 </footer>
 <style>

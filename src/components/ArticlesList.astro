@@ -1,26 +1,9 @@
 ---
-import { Post } from "../jdd/types/post";
+import { getCleanCategory } from "../jdd/Categories";
+import { getDateFromPost } from "../jdd/Dates";
+import { Post } from "../jdd/types/Post";
 
 const { posts } = Astro.props;
-
-const current_year = new Date().getFullYear();
-
-function cleanCategory(string: string): string {
-    string = string.charAt(0).toUpperCase() + string.slice(1); // Uc first
-    string = string.replaceAll("-", " "); // Replace - par un espace
-    return string;
-}
-
-function getDate(post: any): string {
-    return new Date(post.frontmatter.date).toLocaleDateString("fr-fr", {
-        year:
-            current_year == new Date(post.frontmatter.date).getFullYear()
-                ? undefined
-                : "numeric",
-        month: "long",
-        day: "numeric",
-    });
-}
 ---
 
 <section class="articles">
@@ -41,14 +24,14 @@ function getDate(post: any): string {
                                 class="article__category"
                                 datetime={post.frontmatter.date}
                             >
-                                {getDate(post)}
+                                {getDateFromPost(post)}
                             </time>
                         </a>
                         <a
                             href={`category/${post.frontmatter.category}`}
                             class="article__category"
                         >
-                            {cleanCategory(post.frontmatter.category)}
+                            {getCleanCategory(post.frontmatter.category)}
                         </a>
                     </div>
                     <a href={post.url}>
