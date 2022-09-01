@@ -4,7 +4,7 @@
 - [x] Afficage de la page d'article
 - [x] Filtre des articles par catégory
 - [x] Possibilité de mettre un article en "draft"
-- [ ] Flux RSS fonctionel
+- [x] Flux RSS fonctionel
 - [ ] Filtre des articles par tag
 - [ ] Filtre des articles par auteur
 - [ ] Recherche d'un article
