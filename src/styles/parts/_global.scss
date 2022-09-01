@@ -2,20 +2,26 @@ html,
 body {
     margin: 0;
     padding: 0;
+}
+
+body {
     overflow-x: hidden;
 }
 
-*::selection {
-    background-color: $primary;
-    color: white;
+* {
+    box-sizing: border-box;
+
+    &::selection {
+        background-color: $primary;
+        color: white;
+    }
 }
 
 #app {
     --color-primary: #2D9F92;
     --color-dark: #212121;
 
-    font-family: Soleil,
-        sans-serif;
+    font-family: Soleil, sans-serif;
     max-width: 1140px;
     width: calc(100% - 2em);
     margin: 0 auto;

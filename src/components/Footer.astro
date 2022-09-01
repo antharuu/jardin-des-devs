@@ -1,15 +1,40 @@
 ---
 import { SITE_TITLE } from "../config";
 import { current_year } from "../jdd/Dates";
+
+import Link from "./Link.astro";
+
+import Discord from "./Icons/Discord.astro";
+import Github from "./Icons/Github.astro";
+import Twitter from "./Icons/Twitter.astro";
 ---
 
-<footer>
-	&copy; {current_year}
-	{SITE_TITLE}. Tous droits réservés.
+<footer class="footer">
+	<div class="footer__left">
+		<Link
+			href="https://github.com/antharuu/jardin-des-devs"
+			target="_blank"
+		>
+			<Github />
+		</Link>
+		<Link href="https://twitter.com/JardinDesDevs" target="_blank">
+			<Twitter />
+		</Link>
+		<Link href="https://discord.gg/tH48T957f9" target="_blank">
+			<Discord />
+		</Link>
+	</div>
+	<div class="footer__center">
+		<Link href="/" class="footer__icon-link">
+			<img
+				class="footer__icon"
+				src="/favicon.png"
+				alt="Logo du jardin des devs"
+			/>
+			<p class="footer__title">{SITE_TITLE}</p>
+		</Link>
+	</div>
+	<div class="footer__right">
+		&copy; {current_year} - Tous droits réservés.
+	</div>
 </footer>
-<style>
-	footer {
-		padding: 25px;
-		text-align: center;
-	}
-</style>
