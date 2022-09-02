@@ -71,8 +71,12 @@
                 }
             }
 
-            a:hover {
-                color: lighten($brut-primary, 30%);
+            a {
+                color: lighten($brut-primary, 20%);
+
+                &:hover {
+                    color: lighten($brut-primary, 30%);
+                }
             }
 
             >:not(:first-child) {

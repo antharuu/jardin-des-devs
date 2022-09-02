@@ -3,6 +3,7 @@ import MainLayout from "./MainLayout.astro";
 
 import { getCleanCategory } from "../jdd/Categories";
 import { getCleanTag, TagsType } from "../jdd/Tags";
+import { getCleanAuthor } from "../jdd/Authors";
 
 const { frontmatter: infos } = Astro.props;
 ---
@@ -26,7 +27,9 @@ const { frontmatter: infos } = Astro.props;
                     <a href={"/category/" + infos.category} class="category">
                         {getCleanCategory(infos.category)}
                     </a>
-                    <p class="author">{infos.author}</p>
+                    <a href={"/author/" + infos.author} class="author">
+                        {getCleanAuthor(infos.author)}
+                    </a>
                 </div>
             </div>
         </div>

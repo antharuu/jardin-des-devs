@@ -5,9 +5,9 @@
 - [x] Filtre des articles par catégory
 - [x] Possibilité de mettre un article en "draft"
 - [x] Flux RSS fonctionel
-- [ ] Filtre des articles par tag
+- [x] Filtre des articles par tag
 - [x] Ajout du footer
-- [ ] Filtre des articles par auteur
+- [x] Filtre des articles par auteur
 - [ ] Recherche d'un article
 - [ ] Annonce sur Discord lors de la sortie d'un article
 - [ ] Annonce sur Twitter lors de la sortie d'un article

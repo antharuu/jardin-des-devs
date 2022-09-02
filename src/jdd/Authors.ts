@@ -17,3 +17,10 @@ export const Authors: AuthorType = {
 export function getAuthor(slug: string): string {
     return Authors[slug] ?? slug;
 }
+
+export function getCleanAuthor(tag: string): string {
+    tag = getAuthor(tag);
+    tag = tag.charAt(0).toUpperCase() + tag.slice(1); // Uc first
+    tag = tag.replaceAll("-", " "); // Replace - par un espace
+    return tag;
+}
