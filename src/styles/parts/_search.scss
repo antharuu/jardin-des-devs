@@ -1,0 +1,31 @@
+#app {
+    .categories-nav {
+        align-items: center;
+
+        .search {
+            position: relative;
+
+            form {
+                border: 1px solid rgba(white, .5);
+                display: flex;
+                flex-direction: row-reverse;
+
+                button {
+                    height: 32px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: transparent;
+                    border: none;
+                    color: white;
+                }
+
+                input {
+                    background-color: transparent;
+                    border: none;
+                    width: 180px;
+                }
+            }
+        }
+    }
+}

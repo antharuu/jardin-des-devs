@@ -1,0 +1,46 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import ArticlesList from "../../components/ArticlesList.astro";
+import { Post } from "../../jdd/types/Post";
+import MiniSearch from "minisearch";
+
+let lastId = 0;
+
+const { search } = Astro.params;
+
+let posts = (await Astro.glob("../posts/**/*.{md,mdx}"))
+  .sort(
+    (a: Post, b: Post) =>
+      new Date(b.frontmatter.date).valueOf() -
+      new Date(a.frontmatter.date).valueOf()
+  )
+  .map((post) => {
+    return {
+      ...post,
+      title: post.frontmatter.title,
+      description: post.frontmatter.description,
+      category: post.frontmatter.category,
+      tags: post.frontmatter.tags,
+      id: lastId++,
+    };
+  });
+
+let miniSearch = new MiniSearch({
+  fields: ["title", "description", "category", "tags"],
+});
+
+miniSearch.addAll(posts);
+
+const posts_in_search = miniSearch.search(search as string);
+
+const show_posts: Post[] = [];
+posts_in_search.forEach((s) => {
+  posts.forEach((post: any) => {
+    if (post.id === s.id) show_posts.push(post);
+  });
+});
+---
+
+<MainLayout>
+  <ArticlesList posts={show_posts} />
+</MainLayout>

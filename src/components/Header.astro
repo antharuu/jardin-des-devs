@@ -2,27 +2,31 @@
 import Link from "./Link.astro";
 import { SITE_TITLE } from "../config";
 import { Categories } from "../jdd/Categories";
+import Search from "../components/Search.vue";
+
+const { search } = Astro.params;
 ---
 
 <header class="header">
-	<div class="header__title-container">
-		<Link href="/" class="header__title-link">
-			<img
-				class="header__logo"
-				src="/favicon.png"
-				alt="Logo du jardin des devs"
-			/>
-			<h1 class="header__title">{SITE_TITLE}</h1>
-		</Link>
-	</div>
-	<nav class="categories-nav">
-		<a class="categories-nav__item" href="/"> Tous</a>
-		{
-			Object.entries(Categories).map((cat) => (
-				<a class="categories-nav__item" href={"/category/" + cat[0]}>
-					{cat[1]}
-				</a>
-			))
-		}
-	</nav>
+  <div class="header__title-container">
+    <Link href="/" class="header__title-link">
+      <img
+        class="header__logo"
+        src="/favicon.png"
+        alt="Logo du jardin des devs"
+      />
+      <h1 class="header__title">{SITE_TITLE}</h1>
+    </Link>
+  </div>
+  <nav class="categories-nav">
+    <a class="categories-nav__item" href="/"> Tous</a>
+    {
+      Object.entries(Categories).map((cat) => (
+        <a class="categories-nav__item" href={"/category/" + cat[0]}>
+          {cat[1]}
+        </a>
+      ))
+    }
+    <Search client:load url={Astro.site} oldValue={search} />
+  </nav>
 </header>

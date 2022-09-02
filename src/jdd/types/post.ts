@@ -1,5 +1,6 @@
 export type Post = {
     layout: string,
+    id?: number,
     frontmatter: {
         title: string,
         description: string,
