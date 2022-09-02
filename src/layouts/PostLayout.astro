@@ -2,6 +2,7 @@
 import MainLayout from "./MainLayout.astro";
 
 import { getCleanCategory } from "../jdd/Categories";
+import { getCleanTag, TagsType } from "../jdd/Tags";
 
 const { frontmatter: infos } = Astro.props;
 ---
@@ -32,5 +33,14 @@ const { frontmatter: infos } = Astro.props;
     </section>
     <div class="post__content">
         <slot />
+        <div class="post__tags">
+            {
+                infos.tags.map((tag: string) => (
+                    <a href={`/tag/${tag}`} class="post__tag">
+                        {getCleanTag(tag)}
+                    </a>
+                ))
+            }
+        </div>
     </div>
 </MainLayout>

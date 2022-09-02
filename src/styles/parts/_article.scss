@@ -74,6 +74,11 @@
         word-spacing: .16em;
         color: rgba($brut-dark, .8);
 
+
+        @media screen and (max-width: 660px) {
+            width: unset;
+        }
+
         p {
             margin-top: 3em;
         }
@@ -152,6 +157,26 @@
             margin-top: 3em;
             width: 60%;
             opacity: 0.6;
+        }
+    }
+
+    .post {
+        &__tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5em;
+            row-gap: .5em;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            margin-top: 3em;
+            margin-bottom: 3em;
+        }
+
+        &__tag {
+            border: 1px solid rgba($brut-dark, .5);
+            font-weight: 400 !important;
+            padding: .2em 1.5em;
+            opacity: 0.8;
         }
     }
 }
