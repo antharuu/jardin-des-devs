@@ -108,4 +108,4 @@ author: "Antharuu"
 
 ```
 
-*Notez que le slug ne doit pas contenir d'espace ou de characteres spéciaux.*
+*Notez que le nom du fichier ne doit pas contenir d'espace ou de characteres spéciaux.*

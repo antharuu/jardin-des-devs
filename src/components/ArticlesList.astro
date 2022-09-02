@@ -7,46 +7,48 @@ const { posts } = Astro.props;
 ---
 
 <section class="articles">
-    {
-        posts
-            .filter((post: Post) => !(post.frontmatter.draft ?? false))
-            .map((post: Post) => (
-                <div class={`article category--${post.frontmatter.category}`}>
-                    <a href={post.url} class="article__image">
-                        <img
-                            src={post.frontmatter.image}
-                            alt={`Image du post "${post.frontmatter.title}"`}
-                        />
-                    </a>
-                    <div class="article__top">
-                        <a href={post.url}>
-                            <time
-                                class="article__category"
-                                datetime={post.frontmatter.date}
-                            >
-                                {getDateFromPost(post)}
-                            </time>
-                        </a>
-                        <a
-                            href={`category/${post.frontmatter.category}`}
-                            class="article__category"
-                        >
-                            {getCleanCategory(post.frontmatter.category)}
-                        </a>
-                    </div>
-                    <a href={post.url}>
-                        <h3 class="article__title">{post.frontmatter.title}</h3>
-                    </a>
-                    <p class="article__description">
-                        {post.frontmatter.description}
-                    </p>
-                    <div class="article__bottom">
-                        <a href={post.url}>
-                            Lire la suite
-                            <span class="material-icons">chevron_right</span>
-                        </a>
-                    </div>
-                </div>
-            ))
-    }
+  {
+    posts.length <= 0 ? (
+      <h1 class="articles__not-found">Aucun article n'a été trouvé</h1>
+    ) : (
+      posts
+        .filter((post: Post) => !(post.frontmatter.draft ?? false))
+        .map((post: Post) => (
+          <div class={`article category--${post.frontmatter.category}`}>
+            <a href={post.url} class="article__image">
+              <img
+                src={post.frontmatter.image}
+                alt={`Image du post "${post.frontmatter.title}"`}
+              />
+            </a>
+            <div class="article__top">
+              <a href={post.url}>
+                <time
+                  class="article__category"
+                  datetime={post.frontmatter.date}
+                >
+                  {getDateFromPost(post)}
+                </time>
+              </a>
+              <a
+                href={`category/${post.frontmatter.category}`}
+                class="article__category"
+              >
+                {getCleanCategory(post.frontmatter.category)}
+              </a>
+            </div>
+            <a href={post.url}>
+              <h3 class="article__title">{post.frontmatter.title}</h3>
+            </a>
+            <p class="article__description">{post.frontmatter.description}</p>
+            <div class="article__bottom">
+              <a href={post.url}>
+                Lire la suite
+                <span class="material-icons">chevron_right</span>
+              </a>
+            </div>
+          </div>
+        ))
+    )
+  }
 </section>

@@ -11,6 +11,13 @@
         @media screen and (max-width: 660px) {
             grid-template-columns: 1fr;
         }
+
+        &__not-found {
+            grid-column: span 3;
+            text-align: center;
+            text-transform: uppercase;
+            color: white;
+        }
     }
 
 

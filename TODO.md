@@ -9,6 +9,5 @@
 - [x] Ajout du footer
 - [x] Filtre des articles par auteur
 - [x] Recherche d'un article
-- [ ] Annonce sur Discord lors de la sortie d'un article
-- [ ] Annonce sur Twitter lors de la sortie d'un article
+- [x] AJouter une page 404
 - [ ] Ajout de la page About avec la présentations des membres les plus actifs

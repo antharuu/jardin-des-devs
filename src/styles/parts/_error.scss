@@ -1,0 +1,22 @@
+#app {
+    .error_404 {
+        text-align: center;
+
+        img {
+            margin-bottom: -2em;
+            height: 6em;
+            aspect-ratio: 1/1;
+            width: fit-content;
+        }
+
+        h1 {
+            font-size: 4em;
+            line-height: .6em;
+            text-transform: uppercase;
+        }
+
+        a {
+            color: white;
+        }
+    }
+}
