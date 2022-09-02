@@ -9,11 +9,13 @@ specifiers:
   '@astrojs/vue': ^1.0.0
   astro: ^1.1.1
   minisearch: ^5.0.0
+  moment: ^2.29.4
   sass: ^1.54.5
   vue: ^3.2.38
 
 dependencies:
   minisearch: 5.0.0
+  moment: 2.29.4
 
 devDependencies:
   '@astrojs/mdx': 0.10.3_rollup@2.78.1
@@ -2947,6 +2949,10 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dev: true
+
+  /moment/2.29.4:
+    resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
+    dev: false
 
   /mri/1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}

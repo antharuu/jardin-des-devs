@@ -23,6 +23,7 @@
     "vue": "^3.2.38"
   },
   "dependencies": {
-    "minisearch": "^5.0.0"
+    "minisearch": "^5.0.0",
+    "moment": "^2.29.4"
   }
 }

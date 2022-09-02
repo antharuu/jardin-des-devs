@@ -1,0 +1,14 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import TeamList from "../components/TeamList.vue";
+
+const team = (await Astro.glob("./team/**/*.{md,mdx,yaml}")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date).valueOf()
+);
+---
+
+<MainLayout>
+  <TeamList client:load {team} />
+</MainLayout>

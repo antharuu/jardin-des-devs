@@ -19,7 +19,7 @@ const { search } = Astro.params;
     </Link>
   </div>
   <nav class="categories-nav">
-    <a class="categories-nav__item" href="/"> Tous</a>
+    <a class="categories-nav__item" href="/">Tous</a>
     {
       Object.entries(Categories).map((cat) => (
         <a class="categories-nav__item" href={"/category/" + cat[0]}>
@@ -27,6 +27,7 @@ const { search } = Astro.params;
         </a>
       ))
     }
+    <a class="categories-nav__item" href="/team">Membres</a>
     <Search client:load url={Astro.site} oldValue={search} />
   </nav>
 </header>
