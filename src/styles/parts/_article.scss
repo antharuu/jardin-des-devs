@@ -6,10 +6,19 @@
         margin: 0;
         line-height: 0;
 
+        @media screen and (max-width: 660px) {
+            line-height: unset;
+        }
+
         &__image {
             width: 100%;
             object-fit: cover;
             aspect-ratio: 2/1;
+
+
+            @media screen and (max-width: 660px) {
+                aspect-ratio: 1/1;
+            }
         }
 
         &__content {
@@ -23,6 +32,11 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+
+
+            @media screen and (max-width: 660px) {
+                bottom: 0.2em;
+            }
         }
 
         &__title {
@@ -38,11 +52,24 @@
         }
 
         &__infos {
+            margin-top: 3em;
             height: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 3em;
+
+            @media screen and (max-width: 660px) {
+                flex-direction: column;
+                height: unset;
+                gap: .5em;
+
+                >* {
+                    padding: 0;
+                    margin: 0;
+                    font-size: .9em;
+                }
+            }
 
             a:hover {
                 color: lighten($brut-primary, 30%);
@@ -59,6 +86,10 @@
                     height: 100%;
                     width: 1px;
                     color: white;
+
+                    @media screen and (max-width: 660px) {
+                        content: unset;
+                    }
                 }
             }
         }
