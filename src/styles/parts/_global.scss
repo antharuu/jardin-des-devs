@@ -15,6 +15,22 @@ body {
         background-color: $primary;
         color: white;
     }
+
+    &::-webkit-scrollbar {
+        width: 14px;
+
+        &-track {
+            background: white;
+        }
+
+        &-thumb {
+            background: lighten($brut-primary, 10%);
+
+            &:hover {
+                background: lighten($brut-primary, 20%);
+            }
+        }
+    }
 }
 
 #app {
