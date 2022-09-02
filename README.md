@@ -66,7 +66,7 @@ Envoyez simplement le contenu de votre article avec tout les informations *(voir
 
 Pour le moment nous acceptons seulement les formats:
 
-- [Mardkdown](#): .md
+- [Markdown](#): .md
 - [MDX](https://mdxjs.com/): .mdx
 
 *N'hésitez pas à demander si vous avez une préférences pour un autre format.*
@@ -108,4 +108,8 @@ author: "Antharuu"
 
 ```
 
+<<<<<<< HEAD
 *Notez que le nom du fichier ne doit pas contenir d'espace ou de characteres spéciaux.*
+=======
+*Notez que le slug ne doit pas contenir d'espace ou de characteres spéciaux.*
+>>>>>>> faf01da06fd16d7af0d1e1731d913797bf2ca9d8
