@@ -36,7 +36,7 @@ const now = new Date().getTime();
                 </time>
               </a>
               <a
-                href={`category/${post.frontmatter.category}`}
+                href={`${Astro.site}category/${post.frontmatter.category}`}
                 class="article__category"
               >
                 {getCleanCategory(post.frontmatter.category)}

@@ -9,41 +9,41 @@ const { frontmatter: infos } = Astro.props;
 ---
 
 <MainLayout subtitle={infos.title}>
-    <section class="post-infos">
-        <img src={infos.image} class="post-infos__image" />
-        <div class="post-infos__content">
-            <div class="post-infos__content-inner">
-                <h1 class="post-infos__title">{infos.title}</h1>
-                <div class="post-infos__infos">
-                    <time class="date" datetime={infos.date}>
-                        {
-                            new Date(infos.date).toLocaleDateString("fr-fr", {
-                                year: "numeric",
-                                month: "long",
-                                day: "numeric",
-                            })
-                        }
-                    </time>
-                    <a href={"/category/" + infos.category} class="category">
-                        {getCleanCategory(infos.category)}
-                    </a>
-                    <a href={"/author/" + infos.author} class="author">
-                        {getCleanAuthor(infos.author)}
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="post__content">
-        <slot />
-        <div class="post__tags">
+  <section class="post-infos">
+    <img src={infos.image} class="post-infos__image" />
+    <div class="post-infos__content">
+      <div class="post-infos__content-inner">
+        <h1 class="post-infos__title">{infos.title}</h1>
+        <div class="post-infos__infos">
+          <time class="date" datetime={infos.date}>
             {
-                infos.tags.map((tag: string) => (
-                    <a href={`/tag/${tag}`} class="post__tag">
-                        {getCleanTag(tag)}
-                    </a>
-                ))
+              new Date(infos.date).toLocaleDateString("fr-fr", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })
             }
+          </time>
+          <a href={Astro.site + "category/" + infos.category} class="category">
+            {getCleanCategory(infos.category)}
+          </a>
+          <a href={Astro.site + "author/" + infos.author} class="author">
+            {getCleanAuthor(infos.author)}
+          </a>
         </div>
+      </div>
     </div>
+  </section>
+  <div class="post__content">
+    <slot />
+    <div class="post__tags">
+      {
+        infos.tags.map((tag: string) => (
+          <a href={Astro.site + `tag/${tag}`} class="post__tag">
+            {getCleanTag(tag)}
+          </a>
+        ))
+      }
+    </div>
+  </div>
 </MainLayout>

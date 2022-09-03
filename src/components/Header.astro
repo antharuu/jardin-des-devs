@@ -9,7 +9,7 @@ const { search } = Astro.params;
 
 <header class="header">
   <div class="header__title-container">
-    <Link href="/" class="header__title-link">
+    <Link href={Astro.site} class="header__title-link">
       <img
         class="header__logo"
         src="/favicon.png"
@@ -19,15 +19,18 @@ const { search } = Astro.params;
     </Link>
   </div>
   <nav class="categories-nav">
-    <a class="categories-nav__item" href="/">Tous</a>
+    <a class="categories-nav__item" href={Astro.site}>Tous</a>
     {
       Object.entries(Categories).map((cat) => (
-        <a class="categories-nav__item" href={"/category/" + cat[0]}>
+        <a
+          class="categories-nav__item"
+          href={Astro.site + "category/" + cat[0]}
+        >
           {cat[1]}
         </a>
       ))
     }
-    <a class="categories-nav__item" href="/team">Membres</a>
+    <a class="categories-nav__item" href={Astro.site + "team"}>Membres</a>
     <Search client:load url={Astro.site} oldValue={search} />
   </nav>
 </header>
