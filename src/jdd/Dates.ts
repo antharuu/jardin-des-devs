@@ -12,3 +12,9 @@ export function getDateFromPost(post: Post): string {
         day: "numeric",
     });
 }
+
+export function addHours(numOfHours: number, date: Date = new Date()) {
+    date.setTime(date.getTime() + numOfHours * 60 * 60 * 1000);
+
+    return date;
+}

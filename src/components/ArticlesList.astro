@@ -1,9 +1,10 @@
 ---
 import { getCleanCategory } from "../jdd/Categories";
-import { getDateFromPost } from "../jdd/Dates";
+import { addHours, getDateFromPost } from "../jdd/Dates";
 import { Post } from "../jdd/types/Post";
 
 const { posts } = Astro.props;
+const now = new Date().getTime();
 ---
 
 <section class="articles">
@@ -13,6 +14,10 @@ const { posts } = Astro.props;
     ) : (
       posts
         .filter((post: Post) => !(post.frontmatter.draft ?? false))
+        .filter(
+          (post: Post) =>
+            addHours(-2, new Date(post.frontmatter.date)).getTime() <= now
+        )
         .map((post: Post) => (
           <div class={`article category--${post.frontmatter.category}`}>
             <a href={post.url} class="article__image">
