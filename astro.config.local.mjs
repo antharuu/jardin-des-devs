@@ -7,7 +7,7 @@ import vue from "@astrojs/vue";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://jardin-des-devs.vercel.app',
+  site: 'http://localhost:3000/',
   integrations: [mdx(), sitemap(), vue()],
   output: 'server',
   adapter: vercel(),
