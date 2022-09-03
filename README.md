@@ -78,38 +78,38 @@ Créez simplement un fichier compatible *(.md, .mdx)* dans le dossiers `src/page
 ```markdown
 ---
 
-# ⚠️ Ne pas toucher à cette ligne
-layout: "../../../layouts/PostLayout.astro"
+################################## ⚠️ Ne pas toucher à cette partie
+
+layout: ../../../layouts/PostLayout.astro
+draft: false
+
+####################################################################
 
 # Titre de l'article
-title: "Bonjour le monde"
+title: Le titre de votre article
 
 # Description courte, utilisé dans la liste des articles ainsi que pour le référencement.
-description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore iure rerum enim voluptatum nemo. Ab adipisci harum nesciunt vero et similique minima alias modi unde quod! Doloremque officiis odit sapiente."
+description: Une super description
 
-# La date de publication/modification. (format: YYYY-MM-DD)
-date: "2042-12-01"
+# La date de publication/modification. (format: YYYY-MM-DD et éventuellement l'heure HH:ii:ss)
+date: 2022-09-03 15:00:00
 
 # L'image de bannière (soit le lien direct, soit insérer dans le dossier images dans /public "/images/[votre image]")
-image: "http://placekitten.com/1000/1002"
+image: /images/pexels-eberhard-grossgasteiger-1366919.jpg
 
 # La catégorie de l'article.
-category: "godot"
+category: godot
 
 # Les tags de votre article. (5 max)
-tags: [ "tag1", "tag2", "tag3", "tag4", "tag5" ]
+tags:
+  - croquettes
+  - godot
 
 # L'auteur de l'article.
-author: "Antharuu"
+author: antharuu
 
 ---
 
 <!-- Ici votre article en md/mdx -->
 
 ```
-
-<<<<<<< HEAD
-*Notez que le nom du fichier ne doit pas contenir d'espace ou de characteres spéciaux.*
-=======
-*Notez que le slug ne doit pas contenir d'espace ou de characteres spéciaux.*
->>>>>>> faf01da06fd16d7af0d1e1731d913797bf2ca9d8

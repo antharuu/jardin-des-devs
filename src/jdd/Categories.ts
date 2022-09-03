@@ -11,8 +11,10 @@ export type CategoriesType = { [key: string]: string }
  * La valeur est le nom de la cétegorie comme vous voulez qu'il apparaisse.
  */
 export const Categories: CategoriesType = {
-    "godot": "Godot",
-    "unity": "Unity",
+    // "godot": "Godot",
+    // "unity": "Unity",
+    // "unreal": "Unreal",
+    "jardin-des-devs": "Jardin des devs",
 }
 
 export function getCategory(slug: string): string {

@@ -22,6 +22,7 @@
         }
 
         &__content {
+            padding: 2em;
             position: absolute;
             display: flex;
             inset: 0;
@@ -115,7 +116,7 @@
         }
 
         p {
-            margin-top: 3em;
+            margin-top: 1.5em;
         }
 
         a {
@@ -128,6 +129,16 @@
             font-weight: bolder;
         }
 
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-bottom: -1rem;
+            margin-top: 2rem;
+        }
+
         em {
             font-style: italic;
             color: rgba($brut-dark, .6);
@@ -136,7 +147,7 @@
         blockquote {
             border-left: 1px solid $primary;
             margin: 0;
-            padding-left: 3em;
+            padding-left: 1.5em;
             font-family: park-lane, serif;
             font-weight: 300;
             font-style: normal;

@@ -10,7 +10,7 @@ const { frontmatter: infos } = Astro.props;
 
 <MainLayout subtitle={infos.title}>
   <section class="post-infos">
-    <img src={infos.image} class="post-infos__image" />
+    <img src={Astro.site + "images/" + infos.image} class="post-infos__image" />
     <div class="post-infos__content">
       <div class="post-infos__content-inner">
         <h1 class="post-infos__title">{infos.title}</h1>
