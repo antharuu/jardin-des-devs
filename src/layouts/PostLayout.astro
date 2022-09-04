@@ -4,8 +4,23 @@ import MainLayout from "./MainLayout.astro";
 import { getCleanCategory } from "../jdd/Categories";
 import { getCleanTag, TagsType } from "../jdd/Tags";
 import { getCleanAuthor } from "../jdd/Authors";
+import Github from "../components/Icons/Github.astro";
 
 const { frontmatter: infos } = Astro.props;
+
+function getFileName(file: string): string {
+  let parts = file.split("/");
+
+  const keepParts = [];
+  let secu = 0;
+
+  while ((keepParts[0] ?? "") !== "posts" && secu < 10) {
+    keepParts.unshift(parts.pop());
+    secu++;
+  }
+
+  return keepParts.join("/");
+}
 ---
 
 <MainLayout
@@ -49,5 +64,15 @@ const { frontmatter: infos } = Astro.props;
         ))
       }
     </div>
+    <small>
+      <a
+        href={"https://github.com/antharuu/jardin-des-devs/blob/master/src/pages/" +
+          getFileName(Astro.props.file)}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Proposer une modification
+      </a>
+    </small>
   </div>
 </MainLayout>
