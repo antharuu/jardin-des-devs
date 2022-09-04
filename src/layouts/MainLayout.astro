@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
-const { subtitle, image = "/social.png" } = Astro.props;
+const { subtitle, description = null, image = "/social.png" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ const { subtitle, image = "/social.png" } = Astro.props;
   <head>
     <BaseHead
       title={(subtitle ? `${subtitle} - ` : "") + SITE_TITLE}
-      description={SITE_DESCRIPTION}
+      description={description ?? SITE_DESCRIPTION}
       {image}
     />
   </head>

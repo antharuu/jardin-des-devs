@@ -8,7 +8,11 @@ import { getCleanAuthor } from "../jdd/Authors";
 const { frontmatter: infos } = Astro.props;
 ---
 
-<MainLayout subtitle={infos.title} image={"/images/" + infos.image}>
+<MainLayout
+  subtitle={infos.title}
+  image={"/images/" + infos.image}
+  description={infos.description}
+>
   <section class="post-infos">
     <img src={Astro.site + "images/" + infos.image} class="post-infos__image" />
     <div class="post-infos__content">
