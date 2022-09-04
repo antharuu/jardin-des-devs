@@ -5,24 +5,25 @@ import Footer from "../components/Footer.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
-const { subtitle } = Astro.props;
+const { subtitle, image = "/social.png" } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="fr-fr">
-    <head>
-        <BaseHead
-            title={(subtitle ? `${subtitle} - ` : "") + SITE_TITLE}
-            description={SITE_DESCRIPTION}
-        />
-    </head>
-    <body>
-        <div id="app">
-            <Header title={SITE_TITLE} />
-            <main>
-                <slot />
-            </main>
-            <Footer />
-        </div>
-    </body>
+  <head>
+    <BaseHead
+      title={(subtitle ? `${subtitle} - ` : "") + SITE_TITLE}
+      description={SITE_DESCRIPTION}
+      {image}
+    />
+  </head>
+  <body>
+    <div id="app">
+      <Header title={SITE_TITLE} />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
 </html>
